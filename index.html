@@ -14,7 +14,12 @@
         h1 {
             margin-top: 50px;
         }
-        #downloadButton {
+        .downloadContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .downloadButton {
             background-color: yellow;
             color: blue;
             border: none;
@@ -23,7 +28,7 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin-top: 20px;
+            margin: 0 10px;
             cursor: pointer;
         }
         #screenshotContainer {
@@ -39,21 +44,24 @@
     </style>
 </head>
 <body>
-    <h1>Download Game</h1>
-    <button id="downloadButton">Download Geodash.rar</button>
+    <h1>Download GeoDash</h1>
+    <div class="downloadContainer">
+        <button class="downloadButton" onclick="downloadFile('GeoDash.rar')">RAR-Datei</button>
+        <button class="downloadButton" onclick="downloadFile('GeoDash.zip')">ZIP-Datei</button>
+    </div>
     <div id="screenshotContainer">
         <img src="screenshot_game.png" alt="Game Screenshot">
     </div>
 
     <script>
-        document.getElementById('downloadButton').addEventListener('click', function() {
+        function downloadFile(filename) {
             const link = document.createElement('a');
-            link.href = 'GeoDash/Game.rar';
-            link.download = 'Game.rar';
+            link.href = filename;
+            link.download = filename;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        });
+        }
     </script>
 </body>
 </html>
