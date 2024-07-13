@@ -4,15 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Game</title>
+    <style>
+        body {
+            background-color: blue;
+            color: yellow;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        #downloadButton {
+            background-color: yellow;
+            color: blue;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #screenshotContainer {
+            border: 5px solid yellow;
+            margin: 20px auto;
+            width: 40%;
+        }
+        #screenshotContainer img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Download Game</h1>
     <button id="downloadButton">Download Geodash.rar</button>
+    <div id="screenshotContainer">
+        <img src="screenshot_game.png" alt="Game Screenshot">
+    </div>
 
     <script>
         document.getElementById('downloadButton').addEventListener('click', function() {
             const link = document.createElement('a');
-            link.href = 'GeoDash/Game.rar';
+            link.href = 'Game.rar';
             link.download = 'Game.rar';
             document.body.appendChild(link);
             link.click();
