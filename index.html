@@ -12,8 +12,8 @@
     <script>
         document.getElementById('downloadButton').addEventListener('click', function() {
             const link = document.createElement('a');
-            link.href = '';
-            link.download = 'GeoDash Game.rar';
+            link.href = 'GeoDash/Game.rar';
+            link.download = 'Game.rar';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
